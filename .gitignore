@@ -1,0 +1,6 @@
+build/*
+.vscode/*
+sdkconfig.*
+managed_components/*
+.devcontainer/*
+.DS_Store
