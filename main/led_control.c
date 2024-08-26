@@ -18,7 +18,7 @@ void init_led(void)
 static void set_led_color(float frequency)
 {
     uint8_t red, green, blue;
-    ESP_LOGI("LED", "FREQUENCY RECIEVED IS %f", frequency);
+    //shah ESP_LOGI("LED", "FREQUENCY RECIEVED IS %f", frequency);
     // Map frequency to color (example)
     if (frequency < 3.3) {
         red = 0;
@@ -69,7 +69,7 @@ void led_control_task(void *pvParameter)
                 set_led_color(frequency);
                 gpio_set_level(LED_PIN, 1);
             } else {
-                ESP_LOGI("TAG", "frequency receieved is %d", frequency);
+                //shah ESP_LOGI("TAG", "frequency receieved is %d", frequency);
                 delay_ms = 1000 / (2 * frequency); // Calculate delay in milliseconds
             
             ESP_LOGI("TAG", "LED DELAY %d", delay_ms);
