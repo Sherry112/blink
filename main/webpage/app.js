@@ -9,7 +9,6 @@ var wifiConnectInterval = null;
  * Initialize functions here.
  */
 $(document).ready(function(){
-	getSSID();
 	getConnectInfo();
 	$("#connect_wifi").on("click", function(){
 		checkCredentials();
@@ -187,14 +186,4 @@ function disconnectWifi()
 	});
 	// Update the web page
 	setTimeout("location.reload(true);", 2000);
-}
-
-/**
- * Gets the ESP32's access point SSID for displaying on the web page.
- */
-function getSSID()
-{
-	$.getJSON('/apSSID.json', function(data) {
-		$("#ap_ssid").text(data["ssid"]);
-	});
 }
